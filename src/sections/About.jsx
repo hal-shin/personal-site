@@ -57,6 +57,7 @@ const Text = styled.p`
   color: white;
 `;
 
+
 export default function About() {
   return (
     <Container>
@@ -64,12 +65,12 @@ export default function About() {
         <Column>
           <Fade right>
             <SectionHeader color="white">About me</SectionHeader>
-          <Text>
-            I am a self-taught, full-stack web developer based in Surrey, BC. I
-            love great application and I love the process of making them. My
-            particular interests include great UI/UX, tooling applications, and
-            writing clean code.
-          </Text>
+            <Text>
+              I am a self-taught, full-stack web developer based in Surrey, BC.
+              I love great application and I love the process of making them. My
+              particular interests include great UI/UX, tooling applications,
+              and writing clean code.
+            </Text>
           </Fade>
         </Column>
         <Column>
@@ -77,6 +78,7 @@ export default function About() {
             <Image src={aboutImage} alt="" />
           </div>
         </Column>
+
       </Content>
     </Container>
   );
