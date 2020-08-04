@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from "@emotion/styled";
 
 import { AnimatedBackground, Button } from "../components";
@@ -22,7 +22,7 @@ const Container = styled.div`
 const Content = styled.div`
   background-color: white;
   margin: 0 10px 0 10px;
-  display: ${(props) => (props.isVisible ? "flex" : "none")};
+  display: flex;
   flex-direction: column;
   align-items: center;
   ${mq({
@@ -60,9 +60,7 @@ const Background = styled.div`
 const Avatar = styled.div`
   display: flex;
   justify-content: center;
-  //width: 100%;
   ${mq({
-    // width: [100, 150, 200, 250, 280],
     position: ["absolute", "static"],
     "& img": {
       width: [150, 150, 200, 225, 250],
@@ -76,7 +74,7 @@ const Avatar = styled.div`
 const Header = styled.h2`
   margin: 0;
   font-weight: 900;
-  color: #222;
+  color: #333;
   ${mq({
     marginTop: [30, 30, 30, 40, 50],
     fontSize: ["2.25rem", "2.25rem", "2.75rem", "3.25rem", "3.5rem"],
@@ -85,6 +83,7 @@ const Header = styled.h2`
 
 const Subheader = styled.p`
   font-size: 2rem;
+  color: #333;
   ${mq({
     fontSize: ["1.25rem", "1.75rem", "1.75rem", "1.75rem", "2rem"],
     marginBottom: [20, 30, 40, 50, 60, 70],
@@ -94,34 +93,26 @@ const Subheader = styled.p`
 `;
 
 function Jumbotron() {
-  const [isVisible, setIsVisible] = useState(true);
-
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      window.pageYOffset > window.innerHeight
-        ? setIsVisible(false)
-        : setIsVisible(true);
-    });
-  }, []);
-
   return (
     <Container>
       <Background>
         <AnimatedBackground />
       </Background>
 
-      <Content isVisible={isVisible}>
-        <Zoom>
+      <Zoom>
+        <Content>
           <Avatar>
-            <img src={HSAvatar} alt="" />
+            <Zoom>
+              <img src={HSAvatar} alt="" />
+            </Zoom>
           </Avatar>
           <Header>Hal Shin</Header>
           <Subheader>full-stack web developer</Subheader>
           <div>
             <Button>View my work</Button>
           </div>
-        </Zoom>
-      </Content>
+        </Content>
+      </Zoom>
     </Container>
   );
 }

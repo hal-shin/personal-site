@@ -51,7 +51,7 @@ p {
 /* Animated Background css */
 
 #home-anim {
-  min-width: 1920px;
+  width: 1920px;
   min-height: 100vh;
 }
 
