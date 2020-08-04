@@ -2,71 +2,42 @@ import React from "react";
 import styled from "@emotion/styled";
 import Fade from "react-reveal/Fade";
 
-import mq from "../utils/breakpoints";
-import SectionHeader from "../components/SectionHeader";
+import {
+  Content,
+  Image,
+  Columns,
+  ContainerBase,
+  Column,
+  SectionHeader,
+} from "../components";
 import toolboxImage from "../assets/toolbox.png";
+import mq from "../utils/breakpoints";
 
-const Container = styled.div`
-  ${mq({
-    clipPath: [
-      "polygon(50% 0%, 100% 5%, 100% 100%, 0 100%, 0 5%)",
-      "polygon(50% 0%, 100% 8%, 100% 100%, 0 100%, 0 8%)",
-      "polygon(50% 0%, 100% 10%, 100% 100%, 0 100%, 0 10%)",
-      "polygon(50% 0%, 100% 15%, 100% 100%, 0 100%, 0 15%)",
-    ],
-  })};
-  margin-top: -25vh;
-  padding: calc(20vh + 200px) 0 200px 0;
-  height: 100vh;
+const Container = styled(ContainerBase)`
   background-color: #383333;
-  //border: 1px solid red;
-`;
-
-const Content = styled.div`
-  //margin: auto;
-  scroll-snap-align: start;
-  //width: 1280px;
-  ${mq({
-    padding: [
-      "0 8px 0 8px",
-      "0 5% 0 5%",
-      "0 10% 0 10%",
-      "0 12% 0 12%",
-      "0 15% 0 15%",
-    ],
-  })}
-  display: flex;
-  flex-direction: column;
-`;
-
-const Columns = styled.div`
-  display: flex;
-`;
-
-const Column = styled.div`
-  flex: 1;
-  padding: 0 50px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  //border: 1px solid brown;
-`;
-
-const Image = styled.img`
-  width: 100%;
-  height: auto;
 `;
 
 const Text = styled.p`
   text-align: left;
   color: white;
 `;
+
+const Bars = styled.div`
+  ${mq({
+    marginTop: [48],
+  })};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
 const ProgressBar = styled.div`
-  height: 24px;
-  width: 100%;
-  background-color: #c4c4c4;
-  //border: 2px solid white;
-  margin-bottom: 12px;
+  ${mq({
+    height: [24, 24, 28, 32, 36],
+    width: ["100%", "100%", "80%"],
+    paddingBottom: [6, 8, 10, 10, 12],
+  })};
   display: flex;
 `;
 
@@ -74,17 +45,50 @@ const ProgressName = styled.div`
   height: 100%;
   width: 100px;
   background-color: orange;
+  border-radius: 20px 0 0 20px;
+  padding-right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  & p {
+    ${mq({
+      fontWeight: [400, 400, 400, 500, 500],
+      fontSize: ["1rem", "1rem", "1.125rem", "1.125rem", "1.125rem"],
+    })}
+  }
 `;
 
 const ProgressContainer = styled.div`
   width: calc(100% - 100px);
   display: flex;
+  background-color: #c4c4c4;
+  border-radius: 0 20px 20px 0;
 `;
 
 const Progress = styled.div`
   background-color: #1478c9;
+  border-radius: 0 20px 20px 0;
   height: 100%;
-  width: ${(props) => props.confidence};
+  width: calc(${(props) => props.confidence} - 16px);
+  color: white;
+  padding-right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  ${mq({})}
+`;
+
+const ImageDiv = styled.div`
+  display: flex;
+  ${mq({
+    justifyContent: [
+      "center",
+      "center",
+      "flex-start",
+      "flex-start",
+      "flex-start",
+    ],
+  })};
 `;
 
 const skills = [
@@ -104,6 +108,22 @@ const skills = [
     text: "CSS",
     confidence: "80%",
   },
+  {
+    text: "Redux",
+    confidence: "70%",
+  },
+  {
+    text: "Node.js",
+    confidence: "70%",
+  },
+  {
+    text: "Express.js",
+    confidence: "70%",
+  },
+  {
+    text: "MongoDB",
+    confidence: "60%",
+  },
 ];
 
 export default function Skillset() {
@@ -112,31 +132,36 @@ export default function Skillset() {
       <Content>
         <Columns>
           <Column>
-            <div>
+            <ImageDiv>
               <Image src={toolboxImage} alt="" />
-            </div>
+            </ImageDiv>
           </Column>
           <Column>
             <Fade right>
               <SectionHeader color="white">Skillset</SectionHeader>
               <Text>
-                I am a self-taught, full-stack web developer based in Surrey,
-                BC. I love great application and I love the process of making
-                them. My particular interests include great UI/UX, tooling
-                applications, and writing clean code.
+                My main tech stack of choice is MERN, but I'm always on the
+                lookout for new technologies and skills to take my applications
+                further.
               </Text>
             </Fade>
           </Column>
         </Columns>
         <Fade up>
-          {skills.map((skill) => (
-            <ProgressBar key={skill.text}>
-              <ProgressName>{skill.text}</ProgressName>
-              <ProgressContainer>
-                <Progress confidence={skill.confidence} />
-              </ProgressContainer>
-            </ProgressBar>
-          ))}
+          <Bars>
+            {skills.map((skill) => (
+              <ProgressBar key={skill.text}>
+                <ProgressName>
+                  <p>{skill.text}</p>
+                </ProgressName>
+                <ProgressContainer>
+                  <Progress confidence={skill.confidence}>
+                    <p>{skill.confidence}</p>
+                  </Progress>
+                </ProgressContainer>
+              </ProgressBar>
+            ))}
+          </Bars>
         </Fade>
       </Content>
     </Container>

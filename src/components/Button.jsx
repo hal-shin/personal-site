@@ -1,23 +1,30 @@
 import styled from "@emotion/styled";
 import mq from "../utils/breakpoints";
 
-export const Button = styled.button`
+const Button = styled.button`
   display: inline-block;
-  background: transparent;
+  background: rgb(101, 201, 255);
   border: 2px solid rgb(101, 201, 255);
+  color: white;
+  border-radius: 35px;
   cursor: pointer;
   ${mq({
-    padding: [8, 12, 14, 14, 16],
+    padding: ["6px 8px", 12, 14, 14, "16px 24px"],
     fontSize: ["0.875rem", "1rem", "1.125rem", "1.25rem", "1.375rem"],
-  })}
+  })};
+  font-family: "Oxygen", sans-serif;
 
-  transition: all ease-in-out 0.2s;
+  transition: all ease-in-out 0.25s;
 
   &:hover {
-    border: 2px solid black;
+    outline: none;
+    background-color: white;
+    color: rgb(101, 201, 255);
   }
 
   &:focus {
     outline: none;
   }
 `;
+
+export default Button;

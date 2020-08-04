@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import styled from "@emotion/styled";
-import { Button } from "../components/Button";
+
+import { AnimatedBackground, Button } from "../components";
 import mq from "../utils/breakpoints";
 import Zoom from "react-reveal/Zoom";
-
 import HSAvatar from "../assets/hs-avatar.svg";
-import AnimatedBackground from "../components/AnimatedBackground";
 
 const Container = styled.div`
   height: 100vh;
@@ -25,14 +24,15 @@ const Content = styled.div`
   margin: 0 10px 0 10px;
   display: ${(props) => (props.isVisible ? "flex" : "none")};
   flex-direction: column;
+  align-items: center;
   ${mq({
-    height: ["60vw", 400, 500, 600, 700],
-    width: ["60vw", 400, 500, 600, 700],
+    height: ["min(60vw, 60vh)", "min(60vw, 60vh)", 500, 600, "min(70vw, 70vh)"],
+    width: ["min(60vw, 60vh)", "min(60vw, 60vh)", 500, 600, "min(70vw, 70vh)"],
     border: [
-      "4px solid rgb(101, 201, 255)",
-      "4px solid rgb(101, 201, 255)",
       "6px solid rgb(101, 201, 255)",
+      "7px solid rgb(101, 201, 255)",
       "8px solid rgb(101, 201, 255)",
+      "9px solid rgb(101, 201, 255)",
       "10px solid rgb(101, 201, 255)",
     ],
     justifyContent: [
@@ -90,6 +90,7 @@ const Subheader = styled.p`
     marginBottom: [20, 30, 40, 50, 60, 70],
   })};
   font-weight: normal;
+  text-align: center;
 `;
 
 function Jumbotron() {
