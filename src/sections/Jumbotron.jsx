@@ -25,6 +25,7 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   ${mq({
     height: ["min(60vw, 60vh)", "min(60vw, 60vh)", 500, 600, "min(70vw, 70vh)"],
     width: ["min(60vw, 60vh)", "min(60vw, 60vh)", 500, 600, "min(70vw, 70vh)"],
@@ -34,13 +35,6 @@ const Content = styled.div`
       "8px solid rgb(101, 201, 255)",
       "9px solid rgb(101, 201, 255)",
       "10px solid rgb(101, 201, 255)",
-    ],
-    justifyContent: [
-      "center",
-      "flex-start",
-      "flex-start",
-      "flex-start",
-      "flex-start",
     ],
   })};
   padding: 50px;
@@ -55,6 +49,16 @@ const Background = styled.div`
   left: 0;
   width: 100vw;
   height: 100vh;
+`;
+
+const CenteredContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  & * {
+    margin-bottom: 20px;
+  }
 `;
 
 const Avatar = styled.div`
@@ -75,8 +79,9 @@ const Header = styled.h2`
   margin: 0;
   font-weight: 900;
   color: #333;
+  text-align: center;
   ${mq({
-    marginTop: [30, 30, 30, 40, 50],
+    marginTop: [50, 0, 0, 0, 0],
     fontSize: ["2.25rem", "2.25rem", "2.75rem", "3.25rem", "3.5rem"],
   })}//color: rgb(101, 201, 255);
 `;
@@ -86,7 +91,7 @@ const Subheader = styled.p`
   color: #333;
   ${mq({
     fontSize: ["1.25rem", "1.75rem", "1.75rem", "1.75rem", "2rem"],
-    marginBottom: [20, 30, 40, 50, 60, 70],
+    // marginBottom: [20, 30, 40, 50, 60, 70],
   })};
   font-weight: normal;
   text-align: center;
@@ -101,16 +106,20 @@ function Jumbotron() {
 
       <Zoom>
         <Content>
-          <Avatar>
-            <Zoom>
-              <img src={HSAvatar} alt="" />
-            </Zoom>
-          </Avatar>
-          <Header>Hal Shin</Header>
-          <Subheader>full-stack web developer</Subheader>
-          <div>
-            <Button>View my work</Button>
-          </div>
+          <CenteredContent>
+            <Avatar>
+              <Zoom>
+                <img src={HSAvatar} alt="" />
+              </Zoom>
+            </Avatar>
+            <div>
+              <Header>Hal Shin</Header>
+              <Subheader>full-stack web developer</Subheader>
+            </div>
+            <div>
+              <Button>View my work</Button>
+            </div>
+          </CenteredContent>
         </Content>
       </Zoom>
     </Container>

@@ -48,10 +48,22 @@ p {
   }
 }
 
+.svg-icon {
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  background: transparent;
+  transition: all 0.25s ease-in-out;
+}
+
+.svg-icon:hover {
+  background: rgba(80, 80, 80, 0.3);
+}
+
 /* Animated Background css */
 
 #home-anim {
-  width: 1920px;
+  width: 2400px;
   min-height: 100vh;
 }
 

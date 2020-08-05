@@ -132,9 +132,11 @@ export default function Skillset() {
       <Content>
         <Columns>
           <Column>
-            <ImageDiv>
-              <Image src={toolboxImage} alt="" />
-            </ImageDiv>
+            <Fade left>
+              <ImageDiv>
+                <Image src={toolboxImage} alt="" />
+              </ImageDiv>
+            </Fade>
           </Column>
           <Column>
             <Fade right>

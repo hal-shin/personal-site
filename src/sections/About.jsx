@@ -36,7 +36,7 @@ export default function About() {
       <Content>
         <Columns>
           <Column reverse={true} order={0}>
-            <Fade right>
+            <Fade left>
               <SectionHeader color="white">About me</SectionHeader>
               <Text>
                 I am a self-taught, full-stack web developer based in Surrey,
@@ -47,9 +47,9 @@ export default function About() {
             </Fade>
           </Column>
           <Column reverse={true} order={1}>
-            <ImageDiv>
-              <Image src={aboutImage} alt="" />
-            </ImageDiv>
+            <Fade right><ImageDiv>
+              <Image src={aboutImage} alt=""/>
+            </ImageDiv></Fade>
           </Column>
         </Columns>
       </Content>
