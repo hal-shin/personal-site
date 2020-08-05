@@ -4,6 +4,7 @@ import About from "./sections/About";
 // import Portfolio from "./sections/Portfolio";
 import Skillset from "./sections/Skillset";
 import Footer from "./sections/Footer";
+import Contact from "./sections/Contact";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <About />
       <Skillset />
       {/*<Portfolio />*/}
+      <Contact />
       <Footer />
     </div>
   );
