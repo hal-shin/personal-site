@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "@emotion/styled";
+import Zoom from "react-reveal/Zoom";
 
 import { AnimatedBackground, Button } from "../components";
 import mq from "../utils/breakpoints";
-import Zoom from "react-reveal/Zoom";
 import HSAvatar from "../assets/hs-avatar.svg";
 
 const Container = styled.div`
@@ -78,7 +78,7 @@ const Avatar = styled.div`
 const Header = styled.h2`
   margin: 0;
   font-weight: 900;
-  color: #333;
+  color: #222;
   text-align: center;
   ${mq({
     marginTop: [50, 0, 0, 0, 0],
@@ -88,7 +88,7 @@ const Header = styled.h2`
 
 const Subheader = styled.p`
   font-size: 2rem;
-  color: #333;
+  color: #222;
   ${mq({
     fontSize: ["1.25rem", "1.75rem", "1.75rem", "1.75rem", "2rem"],
     // marginBottom: [20, 30, 40, 50, 60, 70],
@@ -98,6 +98,14 @@ const Subheader = styled.p`
 `;
 
 function Jumbotron() {
+  // const handleScroll = () => {
+  //   console.log("Contact Ref:", contactRef);
+  //   contactRef.current.scrollIntoView({
+  //     behavior: "smooth",
+  //     block: "start",
+  //   });
+  // };
+
   return (
     <Container>
       <Background>
