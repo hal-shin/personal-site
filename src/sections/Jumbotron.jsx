@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "@emotion/styled";
 import Zoom from "react-reveal/Zoom";
 
@@ -39,7 +39,7 @@ const Content = styled.div`
   })};
   padding: 50px;
   border-radius: 50%;
-  z-index: 1;
+  z-index: ${(props) => (props.isHidden ? "-200" : "1")};
   position: relative;
 `;
 
@@ -49,6 +49,8 @@ const Background = styled.div`
   left: 0;
   width: 100vw;
   height: 100vh;
+  z-index: ${(props) => (props.isHidden ? "1" : "-20")};;
+  background: white;
 `;
 
 const CenteredContent = styled.div`
@@ -98,6 +100,23 @@ const Subheader = styled.p`
 `;
 
 function Jumbotron() {
+  const [isHidden, setIsHidden] = useState(false);
+  console.log("IsHidden:", isHidden);
+
+  const handleScroll = (event) => {
+    if (window.scrollY > window.innerHeight) {
+      setIsHidden(true);
+    } else {
+      setIsHidden(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   // const handleScroll = () => {
   //   console.log("Contact Ref:", contactRef);
   //   contactRef.current.scrollIntoView({
@@ -108,12 +127,12 @@ function Jumbotron() {
 
   return (
     <Container>
-      <Background>
+      <Background isHidden={isHidden}>
         <AnimatedBackground />
       </Background>
 
       <Zoom>
-        <Content>
+        <Content isHidden={isHidden}>
           <CenteredContent>
             <Avatar>
               <Zoom>
