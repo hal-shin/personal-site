@@ -70,12 +70,13 @@ const Progress = styled.div`
   border-radius: 0 20px 20px 0;
   height: 100%;
   width: calc(${(props) => props.confidence} - 16px);
-  color: white;
   padding-right: 16px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  ${mq({})}
+  & > p {
+    color: white;
+  }
 `;
 
 const ImageDiv = styled.div`

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createRef } from "react";
 import styled from "@emotion/styled";
 import SectionHeader from "../components/SectionHeader";
 
@@ -14,6 +14,8 @@ const Container = styled.div`
 const Content = styled.div`
   scroll-snap-align: start;
 `;
+
+export const portfolioRef = createRef();
 
 export default function Portfolio() {
   return (
