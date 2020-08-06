@@ -26,23 +26,67 @@ const Container = styled(ContainerBase)`
 const Form = styled.div`
   display: flex;
   flex-direction: column;
-  width: 60%;
+  ${mq({
+    width: ["100%", "100%", "80%", "80%", "60%"],
+  })};
+`;
+
+const Label = styled.label`
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  ${mq({
+    fontSize: ["1rem", "1rem", "1.125rem", "1.25rem", "1.375rem"],
+  })};
+  padding-bottom: 8px;
+  color: #222;
 `;
 
 const ErrorText = styled.p`
   margin-bottom: 12px;
 `;
 
-const ContactButton = styled(Button)`
-  &:hover {
-    //background: transparent;
-  }
-`;
+const ContactButton = styled(Button)``;
 
 const InputField = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 16px;
+`;
+
+const Input = styled.input`
+  border: none;
+  border-radius: 6px;
+  min-height: 48px;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  padding: 0 12px;
+  color: #222;
+  &:focus {
+    outline: none;
+  }
+  ${mq({
+    fontSize: ["1rem", "1rem", "1.125rem", "1.25rem", "1.375rem"],
+  })};
+`;
+
+const Textarea = styled.textarea`
+  border: none;
+  border-radius: 6px;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-size: 1.375rem;
+  min-width: 300px;
+
+  max-width: 1200px;
+  padding: 12px 12px 36px 12px;
+  color: #222;
+  &:focus {
+    outline: none;
+  }
+  ${mq({
+    minHeight: [100, 100, 150, 150, 150],
+    fontSize: ["1rem", "1rem", "1.125rem", "1.25rem", "1.375rem"],
+  })};
 `;
 
 const TextareaDiv = styled.div`
@@ -137,8 +181,8 @@ function Contact() {
             <Fade up>
               <div>
                 <InputField>
-                  <label htmlFor="email">Email (Required)</label>
-                  <input
+                  <Label htmlFor="email">Email (Required)</Label>
+                  <Input
                     type="email"
                     id="email"
                     onChange={handleChange}
@@ -147,8 +191,8 @@ function Contact() {
                   />
                 </InputField>
                 <InputField>
-                  <label htmlFor="name">Name (Required)</label>
-                  <input
+                  <Label htmlFor="name">Name (Required)</Label>
+                  <Input
                     type="text"
                     id="name"
                     onChange={handleChange}
@@ -157,9 +201,9 @@ function Contact() {
                   />
                 </InputField>
                 <InputField>
-                  <label htmlFor="message">Message (Required)</label>
+                  <Label htmlFor="message">Message (Required)</Label>
                   <TextareaDiv>
-                    <textarea
+                    <Textarea
                       id="message"
                       onChange={handleChange}
                       placeholder="Enter your message here."

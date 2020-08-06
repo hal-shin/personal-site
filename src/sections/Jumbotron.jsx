@@ -36,8 +36,8 @@ const Content = styled.div`
       "9px solid rgb(101, 201, 255)",
       "10px solid rgb(101, 201, 255)",
     ],
+    padding: [25, 40, 50, 50, 50],
   })};
-  padding: 50px;
   border-radius: 50%;
   z-index: ${(props) => (props.isHidden ? "-200" : "1")};
   position: relative;
@@ -49,7 +49,7 @@ const Background = styled.div`
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: ${(props) => (props.isHidden ? "1" : "-20")};;
+  z-index: ${(props) => (props.isHidden ? "1" : "-20")};
   background: white;
 `;
 
@@ -61,6 +61,9 @@ const CenteredContent = styled.div`
   & * {
     margin-bottom: 20px;
   }
+  ${mq({
+    paddingBottom: [0, 0, 50, 100, 100],
+  })};
 `;
 
 const Avatar = styled.div`
@@ -83,7 +86,7 @@ const Header = styled.h2`
   color: #222;
   text-align: center;
   ${mq({
-    marginTop: [50, 0, 0, 0, 0],
+    marginTop: [60, 0, 0, 0, 0],
     fontSize: ["2.25rem", "2.25rem", "2.75rem", "3.25rem", "3.5rem"],
   })}//color: rgb(101, 201, 255);
 `;
@@ -92,7 +95,7 @@ const Subheader = styled.p`
   font-size: 2rem;
   color: #222;
   ${mq({
-    fontSize: ["1.25rem", "1.75rem", "1.75rem", "1.75rem", "2rem"],
+    fontSize: ["1.55rem", "1.75rem", "1.75rem", "1.75rem", "2rem"],
     // marginBottom: [20, 30, 40, 50, 60, 70],
   })};
   font-weight: normal;
@@ -101,9 +104,8 @@ const Subheader = styled.p`
 
 function Jumbotron() {
   const [isHidden, setIsHidden] = useState(false);
-  console.log("IsHidden:", isHidden);
 
-  const handleScroll = (event) => {
+  const handleScroll = () => {
     if (window.scrollY > window.innerHeight) {
       setIsHidden(true);
     } else {

@@ -9,8 +9,8 @@ const Button = styled.button`
   border-radius: 35px;
   cursor: pointer;
   ${mq({
-    padding: ["6px 8px", 12, 14, 14, "16px 24px"],
-    fontSize: ["0.875rem", "1rem", "1.125rem", "1.25rem", "1.375rem"],
+    padding: ["6px 12px", 12, 14, 14, "16px 24px"],
+    fontSize: ["1rem", "1rem", "1.125rem", "1.25rem", "1.375rem"],
   })};
   font-family: "Oxygen", sans-serif;
 
