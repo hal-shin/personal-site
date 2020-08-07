@@ -20,6 +20,7 @@ const Container = styled(ContainerBase)`
 const Text = styled.p`
   text-align: left;
   color: white;
+  margin-bottom: 16px;
 `;
 
 const Bars = styled.div`
@@ -146,6 +147,11 @@ export default function Skillset() {
                 My main tech stack of choice is MERN, but I'm always on the
                 lookout for new technologies and skills to take my applications
                 further.
+              </Text>
+              <Text>
+                On the side, I have other skills that make me a more rounded
+                developer, such as design, project management, git/GitHub, and
+                leadership.
               </Text>
             </Fade>
           </Column>

@@ -3,7 +3,7 @@ const projects = [
     name: "RL Tournament App",
     url: "https://rl-team-maker.herokuapp.com/",
     github: "https://github.com/communitybicycle/rl-team-maker",
-    image: "https://i.ibb.co/KLrHBYR/Optimized-rl-tournament-app.jpg",
+    image: "https://i.ibb.co/ryRJF1c/rl-tournament-app.png",
     description: `RL Tournament App is a MERN app for organizing tournaments. It supports 
     scraping a player's data, team formation sandbox, round robin generation, live
     sessions through web sockets, and more.`,
@@ -18,6 +18,14 @@ const projects = [
       projects that others can request to join. Within a project,
        the members can share ideas through the forum, post project updates, 
        set goals and complete task items.`,
+  },
+  {
+    name: "Personal Website",
+    url: "https://halshin.com/",
+    github: "https://github.com/communitybicycle/personal-site",
+    image: "https://i.ibb.co/fCm4mxJ/personal-site.png",
+    description: `This website was a fun project! Using React and emotion.js, I styled
+    this app from the ground up. The site is also fully responsive!`,
   },
   {
     name: "D3 Projects",
