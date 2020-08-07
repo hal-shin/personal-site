@@ -7,6 +7,7 @@ import SectionHeader from "./SectionHeader";
 import Content from "./Content";
 import Image from "./Image";
 import Center from "./Center";
+import Project from "./Project";
 
 export {
   AnimatedBackground,
@@ -17,5 +18,6 @@ export {
   Column,
   Columns,
   Image,
+  Project,
   SectionHeader,
 };

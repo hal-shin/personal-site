@@ -11,7 +11,7 @@ import Fade from "react-reveal/Fade";
 import mq from "../utils/breakpoints";
 
 const Container = styled(ContainerBase)`
-  background-color: orange;
+  background-color: rgb(168, 218, 181);
   ${mq({
     padding: [
       "calc(50px + 50px) 0 115px 0",
@@ -170,7 +170,7 @@ function Contact() {
     <Container>
       <Content center>
         <Fade down>
-          <SectionHeader color="white" center>
+          <SectionHeader center>
             Contact Me
           </SectionHeader>
         </Fade>

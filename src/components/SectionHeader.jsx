@@ -13,7 +13,7 @@ const Header = styled.h2`
 
 function SectionHeader({ color, center, children }) {
   return (
-    <Header color={color || "black"} center={center}>
+    <Header color={color || "#222"} center={center}>
       {children}
     </Header>
   );

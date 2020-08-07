@@ -1,28 +1,64 @@
 import React, { createRef } from "react";
 import styled from "@emotion/styled";
-import SectionHeader from "../components/SectionHeader";
+import Fade from "react-reveal/Fade";
 
-const Container = styled.div`
-  margin-top: -15%;
-  clip-path: polygon(50% 0%, 100% 15%, 100% 100%, 0 100%, 0 15%);
-  padding-top: 20vh;
-  height: 100vh;
-  background-color: rgba(255, 255, 255, 0);
-  border: 1px solid yellow;
-`;
-
-const Content = styled.div`
-  scroll-snap-align: start;
-`;
+import { Project, ContainerBase, Content, SectionHeader } from "../components";
+import projects from "../data/projects";
+import cassetteImage from "../assets/retro-cassette.png";
+import mq from "../utils/breakpoints";
 
 export const portfolioRef = createRef();
 
+const Container = styled(ContainerBase)`
+  background-color: rgb(249, 185, 120);
+  position: relative;
+`;
+
+const PortfolioContent = styled(Content)`
+  z-index: 200;
+`;
+
+const Image = styled.img`
+  position: absolute;
+  ${mq({
+    top: [30, 50, 100, 150, 200],
+    right: [20, 30, 50, 75, 125],
+    width: [150, 200, 300, 400, 450],
+  })};
+
+  z-index: -1;
+  transform: rotate(20deg);
+`;
+
+const Paper = styled.div`
+  border-radius: 6px;
+  background: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+    0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
+    0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+  padding: 12px;
+  display: flex;
+  flex-wrap: wrap;
+`;
+
 export default function Portfolio() {
   return (
-    <Container>
-      <Content>
-        <SectionHeader color="white">Portfolio</SectionHeader>
-      </Content>
+    <Container ref={portfolioRef}>
+      <Image src={cassetteImage} alt="" />
+      <PortfolioContent>
+        <Fade down>
+          <SectionHeader center color="white">
+            Portfolio
+          </SectionHeader>
+        </Fade>
+        <Fade up>
+          <Paper>
+            {projects.map((project, index) => (
+              <Project project={project} key={index} />
+            ))}
+          </Paper>
+        </Fade>
+      </PortfolioContent>
     </Container>
   );
 }

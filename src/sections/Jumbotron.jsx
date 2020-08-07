@@ -5,6 +5,7 @@ import Zoom from "react-reveal/Zoom";
 import { AnimatedBackground, Button } from "../components";
 import mq from "../utils/breakpoints";
 import HSAvatar from "../assets/hs-avatar.svg";
+import { portfolioRef } from "./Portfolio";
 
 const Container = styled.div`
   height: 100vh;
@@ -119,13 +120,13 @@ function Jumbotron() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // const handleScroll = () => {
-  //   console.log("Contact Ref:", contactRef);
-  //   contactRef.current.scrollIntoView({
-  //     behavior: "smooth",
-  //     block: "start",
-  //   });
-  // };
+  const handleClick = () => {
+    console.log("Contact Ref:", portfolioRef);
+    portfolioRef.current.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
 
   return (
     <Container>
@@ -146,7 +147,7 @@ function Jumbotron() {
               <Subheader>full-stack web developer</Subheader>
             </div>
             <div>
-              <Button>View my work</Button>
+              <Button onClick={handleClick}>View my work</Button>
             </div>
           </CenteredContent>
         </Content>
