@@ -10,7 +10,7 @@ const Button = styled.button`
   cursor: pointer;
   ${mq({
     padding: ["6px 12px", "8px 12px", 14, 14, "16px 24px"],
-    fontSize: ["1rem", "1rem", "1.125rem", "1.25rem", "1.375rem"],
+    fontSize: ["1rem", "1.125rem", "1.125rem", "1.25rem", "1.375rem"],
   })};
   font-family: "Oxygen", sans-serif;
 

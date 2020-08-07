@@ -87,7 +87,7 @@ const Header = styled.h2`
   color: #222;
   text-align: center;
   ${mq({
-    marginTop: [60, 0, 0, 0, 0],
+    marginTop: [90, -20, 0, 0, 0],
     fontSize: ["2.25rem", "2.25rem", "2.75rem", "3.25rem", "3.5rem"],
   })}//color: rgb(101, 201, 255);
 `;
@@ -97,7 +97,7 @@ const Subheader = styled.p`
   color: #222;
   ${mq({
     fontSize: ["1.55rem", "1.75rem", "1.75rem", "1.75rem", "2rem"],
-    // marginBottom: [20, 30, 40, 50, 60, 70],
+    marginBottom: [25, 10, 20, 70, 70],
   })};
   font-weight: normal;
   text-align: center;
