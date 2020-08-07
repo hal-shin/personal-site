@@ -89,7 +89,7 @@ const Header = styled.h2`
   ${mq({
     marginTop: [90, -20, 0, 0, 0],
     fontSize: ["2.25rem", "2.25rem", "2.75rem", "3.25rem", "3.5rem"],
-  })}//color: rgb(101, 201, 255);
+  })}
 `;
 
 const Subheader = styled.p`
@@ -133,7 +133,6 @@ function Jumbotron() {
       <Background isHidden={isHidden}>
         <AnimatedBackground />
       </Background>
-
       <Zoom>
         <Content isHidden={isHidden}>
           <CenteredContent>

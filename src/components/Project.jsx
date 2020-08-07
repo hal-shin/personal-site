@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { Center } from "./index";
 import mq from "../utils/breakpoints";
 
 const OuterContainer = styled.div`
@@ -19,23 +18,27 @@ const OuterContainer = styled.div`
 `;
 
 const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+
   background: linear-gradient(
       0deg,
-      rgba(45, 45, 70, 0.85),
-      rgba(45, 45, 70, 0.85)
+      rgba(45, 45, 70, 0.25),
+      rgba(45, 45, 70, 0.25)
     ),
     url(${(props) => props.image});
   background-size: cover;
-  padding: 8px;
-  position: relative;
+  padding: 16px;
   min-height: 300px; //remove later
+  height: auto;
   transition: all 0s ease-in;
   z-index: 5;
+  position: relative;
   &::before {
     background: linear-gradient(
         0deg,
-        rgba(45, 45, 70, 0.35),
-        rgba(45, 45, 70, 0.35)
+        rgba(45, 45, 70, 0.9),
+        rgba(45, 45, 70, 0.9)
       ),
       url(${(props) => props.image});
     background-size: cover;
@@ -58,9 +61,16 @@ const Container = styled.div`
 
     & h3 {
       transition: all 0.25s ease-in;
-      top: 0;
+      visibility: visible;
+      opacity: 1;
     }
     & > div {
+      transition: all 0.25s ease-in;
+      visibility: visible;
+      opacity: 1;
+    }
+
+    & p {
       transition: all 0.25s ease-in;
       visibility: visible;
       opacity: 1;
@@ -69,54 +79,59 @@ const Container = styled.div`
 `;
 
 const Header = styled.h3`
+  margin-top: 0;
+  margin-bottom: 16px;
   font-size: 1.5rem;
   font-family: "Oxygen", sans-serif;
   font-weight: bold;
-  color: white;
-  position: absolute;
-  top: 40%;
-  left: 0;
-  right: 0;
   text-align: center;
+  color: white;
   height: 100%;
-  text-shadow: 0 0 10px #888;
   transition: transform 0s ease-in;
+  visibility: hidden;
+  opacity: 0;
+`;
+
+const Description = styled.p`
+  flex-grow: 1;
+  ${mq({
+    fontSize: ["1rem", "1rem", "1.125rem", "1.125rem", "1.25rem"],
+  })};
+  visibility: hidden;
+  color: white;
+  opacity: 0;
+`;
+
+const Buttons = styled.div`
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  justify-content: space-between;
 `;
 
 const Button = styled.div`
   display: flex;
-  opacity: 0;
-  visibility: hidden;
   justify-content: center;
   align-items: center;
-  font-size: 1.25rem;
+  ${mq({
+    fontSize: ["1rem", "1rem", "1.125rem", "1.125rem", "1.25rem"],
+    padding: [8, 8, 10, 10, 12],
+  })};
   font-family: "Oxygen", sans-serif;
-  font-weight: bold;
+  //font-weight: bold;
   color: white;
   border: 2px solid white;
-  padding: 12px;
   cursor: pointer;
   transition: all 0s ease-in;
-  box-shadow: 0 0 10px #888;
   &:hover {
-    border: 2px solid yellow;
+    transition: all 0.25s ease-in;
+    background-color: rgb(101, 201, 255);
+    border: 2px solid rgb(101, 201, 255);
   }
 `;
 
-const GoToProject = styled(Button)`
-  position: absolute;
-  bottom: 12px;
-  left: 12px;
-`;
-
-const SourceButton = styled(Button)`
-  position: absolute;
-  bottom: 12px;
-  right: 12px;
-`;
-
 function Project({ project }) {
-  const { name, url, github, image } = project;
+  const { name, url, github, image, description } = project;
 
   const handleGoToProject = () => {
     window.open(url, "_blank");
@@ -129,11 +144,12 @@ function Project({ project }) {
   return (
     <OuterContainer>
       <Container image={image}>
-        <Center>
-          <Header>{name}</Header>
-        </Center>
-        <GoToProject onClick={handleGoToProject}>Go to Project</GoToProject>
-        <SourceButton onClick={handleSourceCode}>Source Code</SourceButton>
+        <Header>{name}</Header>
+        <Description>{description}</Description>
+        <Buttons>
+          <Button onClick={handleGoToProject}>Go to Project</Button>
+          <Button onClick={handleSourceCode}>Source Code</Button>
+        </Buttons>
       </Container>
     </OuterContainer>
   );
