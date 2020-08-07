@@ -53,6 +53,7 @@ const Container = styled.div`
     opacity: 0;
   }
   &:hover::before {
+    transition: opacity 0.25s linear;
     opacity: 1;
   }
 
@@ -87,7 +88,6 @@ const Header = styled.h3`
   text-align: center;
   color: white;
   height: 100%;
-  transition: transform 0s ease-in;
   visibility: hidden;
   opacity: 0;
 `;
@@ -118,11 +118,10 @@ const Button = styled.div`
     padding: [8, 8, 10, 10, 12],
   })};
   font-family: "Oxygen", sans-serif;
-  //font-weight: bold;
   color: white;
   border: 2px solid white;
   cursor: pointer;
-  transition: all 0s ease-in;
+  transition: all 0.25s ease-in;
   &:hover {
     transition: all 0.25s ease-in;
     background-color: rgb(101, 201, 255);
