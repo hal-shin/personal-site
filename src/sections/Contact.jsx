@@ -45,7 +45,9 @@ const ErrorText = styled.p`
   margin-bottom: 12px;
 `;
 
-const ContactButton = styled(Button)``;
+const ContactButton = styled(Button)`
+  border-radius: 6px;
+`;
 
 const InputField = styled.div`
   display: flex;
@@ -170,9 +172,7 @@ function Contact() {
     <Container>
       <Content center>
         <Fade down>
-          <SectionHeader center>
-            Contact Me
-          </SectionHeader>
+          <SectionHeader center>Contact Me</SectionHeader>
         </Fade>
         {isEmailSent ? (
           <p>Your message has been sent!</p>

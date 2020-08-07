@@ -23,8 +23,8 @@ const Container = styled.div`
 
   background: linear-gradient(
       0deg,
-      rgba(45, 45, 70, 0.25),
-      rgba(45, 45, 70, 0.25)
+      rgba(45, 45, 70, 0.05),
+      rgba(45, 45, 70, 0.05)
     ),
     url(${(props) => props.image});
   background-size: cover;
