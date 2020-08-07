@@ -9,9 +9,11 @@ import {
 } from "../components";
 import Fade from "react-reveal/Fade";
 import mq from "../utils/breakpoints";
+import walkietalkie from "../assets/walkie-talkie.png";
 
 const Container = styled(ContainerBase)`
   background-color: rgb(168, 218, 181);
+  position: relative;
   ${mq({
     padding: [
       "calc(50px + 50px) 0 115px 0",
@@ -106,6 +108,18 @@ const TextareaLength = styled.div`
   color: #222;
 `;
 
+const Image = styled.img`
+  position: absolute;
+  ${mq({
+    top: [64, 68, 120, 180, 240],
+    left: [20, 66, 100, 140, 200],
+    width: [44, 64, 76, 102, 136],
+  })};
+
+  z-index: -1;
+  transform: rotate(-20deg);
+`;
+
 function Contact() {
   const [formData, setFormData] = useState({
     email: "",
@@ -170,6 +184,7 @@ function Contact() {
 
   return (
     <Container>
+      <Image src={walkietalkie} alt="" />
       <Content center>
         <Fade down>
           <SectionHeader center>Contact Me</SectionHeader>
