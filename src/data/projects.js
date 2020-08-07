@@ -50,7 +50,7 @@ const projects = [
     name: "JavaScript Calculator",
     url: "https://communitybicycle.github.io/javascript-calculator/",
     github: "https://github.com/communitybicycle/javascript-calculator",
-    image: "https://i.ibb.co/KLrHBYR/Optimized-rl-tournament-app.jpg",
+    image: "https://i.ibb.co/q9krY16/javascript-calculator.png",
     description: `JavaScript Calculator is just that—a calculator that handles basic
     functions such as addition, subtraction, division, and multiplication. It also
     stores your latest output so you can simply continue your calculations.`,

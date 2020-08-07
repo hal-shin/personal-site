@@ -28,6 +28,7 @@ const Container = styled.div`
     ),
     url(${(props) => props.image});
   background-size: cover;
+  background-position: center;
   padding: 16px;
   min-height: 300px; //remove later
   height: auto;
