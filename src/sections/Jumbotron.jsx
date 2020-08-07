@@ -28,8 +28,8 @@ const Content = styled.div`
   align-items: center;
   justify-content: center;
   ${mq({
-    height: ["min(60vw, 60vh)", "min(60vw, 60vh)", 500, 600, "min(70vw, 70vh)"],
-    width: ["min(60vw, 60vh)", "min(60vw, 60vh)", 500, 600, "min(70vw, 70vh)"],
+    height: [290, 360, 500, 600, "min(70vw, 70vh)"],
+    width: [290, 360, 500, 600, "min(70vw, 70vh)"],
     border: [
       "6px solid rgb(101, 201, 255)",
       "7px solid rgb(101, 201, 255)",
