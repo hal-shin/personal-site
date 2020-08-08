@@ -18,8 +18,13 @@ const ContentDiv = styled.div`
   align-items: ${(props) => (props.center ? "center" : "stretch")};
 `;
 
-function Content({ center, children }) {
-  return <ContentDiv center={center}>{children}</ContentDiv>;
+function Content({ center, customRef, children }) {
+  console.log(customRef);
+  return (
+    <ContentDiv ref={customRef} center={center}>
+      {children}
+    </ContentDiv>
+  );
 }
 
 export default Content;

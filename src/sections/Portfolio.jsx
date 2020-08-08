@@ -43,9 +43,9 @@ const Paper = styled.div`
 
 export default function Portfolio() {
   return (
-    <Container ref={portfolioRef}>
+    <Container>
       <Image src={cassetteImage} alt="" />
-      <PortfolioContent>
+      <PortfolioContent customRef={portfolioRef}>
         <Fade down>
           <SectionHeader center color="white">
             Portfolio
