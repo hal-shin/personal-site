@@ -19,7 +19,6 @@ const ContentDiv = styled.div`
 `;
 
 function Content({ center, customRef, children }) {
-  console.log(customRef);
   return (
     <ContentDiv ref={customRef} center={center}>
       {children}

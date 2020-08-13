@@ -177,7 +177,6 @@ function Contact() {
       })
       .then((res) => {
         setIsEmailSent(true);
-        console.log("Email successfully sent!");
       })
       .catch((err) => console.error("Oh well, it didn't go through."));
   };
