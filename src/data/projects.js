@@ -42,8 +42,8 @@ const projects = [
     github: "https://github.com/communitybicycle/pomodoro-clock",
     image: "https://i.ibb.co/1ZBzQHv/pomodoro-clock.png",
     description: `Pomodoro Clock is a countdown timer app based on the Pomodoro technique
-    for productivity and focus. It handles basic pause and reset features, in addition to
-    cycling through the set break and session length. There is also an alarm so you don't
+    for productivity. It handles pause and reset features and it
+    cycles through the set break and session lengths. There is also an alarm so you don't
     miss your breaks!`,
   },
   {
