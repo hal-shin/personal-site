@@ -121,7 +121,6 @@ function Jumbotron() {
   }, []);
 
   const handleClick = () => {
-    console.log("Contact Ref:", portfolioRef);
     portfolioRef.current.scrollIntoView({
       behavior: "smooth",
       block: "start",

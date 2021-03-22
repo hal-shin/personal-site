@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import mq from "../utils/breakpoints";
 
-const ContainerBase = styled.div`
+const ContainerBase = styled.section`
   ${mq({
     clipPath: [
       "polygon(50% 0%, 100% 50px, 100% 100%, 0 100%, 0 50px)",
