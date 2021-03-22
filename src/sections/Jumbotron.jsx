@@ -3,6 +3,11 @@ import styled from "@emotion/styled";
 import Zoom from "react-reveal/Zoom";
 
 import { AnimatedBackground, Button } from "../components";
+import {
+  GitHubIcon,
+  LinkedInIcon,
+  TwitterIcon,
+} from "../components/SocialIcons";
 import mq from "../utils/breakpoints";
 import HSAvatar from "../assets/hs-avatar.svg";
 import { portfolioRef } from "./Portfolio";
@@ -97,10 +102,40 @@ const Subheader = styled.p`
   color: #222;
   ${mq({
     fontSize: ["1.55rem", "1.75rem", "1.75rem", "1.75rem", "2rem"],
-    marginBottom: [25, 10, 20, 70, 70],
+    marginBottom: [25, 10, 20, 30, 30],
   })};
   font-weight: normal;
   text-align: center;
+`;
+
+const Icons = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  ${mq({
+    height: ["40px", "46px", "56px", "70px", "100px"],
+    marginBottom: ["0", "20px"],
+  })};
+  //border: 1px solid red;
+`;
+
+const Icon = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  position: relative;
+  & > * {
+    position: absolute;
+    margin: 0;
+  }
+  & > a > img {
+    ${mq({
+      height: ["28px", "34px", "40px", "46px", "50px"],
+      width: ["28px", "34px", "40px", "46px", "50px"],
+    })};
+  }
 `;
 
 function Jumbotron() {
@@ -142,7 +177,18 @@ function Jumbotron() {
             </Avatar>
             <div>
               <Header>Hal Shin</Header>
-              <Subheader>full-stack web developer</Subheader>
+              <Subheader>full-stack developer</Subheader>
+              <Icons>
+                <Icon>
+                  <GitHubIcon />
+                </Icon>
+                <Icon>
+                  <LinkedInIcon />
+                </Icon>
+                <Icon>
+                  <TwitterIcon />
+                </Icon>
+              </Icons>
             </div>
             <div>
               <Button onClick={handleClick}>View my work</Button>
