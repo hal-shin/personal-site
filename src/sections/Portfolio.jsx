@@ -2,7 +2,14 @@ import React, { createRef } from "react";
 import styled from "@emotion/styled";
 import Fade from "react-reveal/Fade";
 
-import { Project, ContainerBase, Content, SectionHeader } from "../components";
+import {
+  Project,
+  ContainerBase,
+  Content,
+  SectionHeader,
+  Center,
+} from "../components";
+import Text from "../components/Text";
 import projects from "../data/projects";
 import cassetteImage from "../assets/retro-cassette.png";
 import mq from "../utils/breakpoints";
@@ -50,7 +57,11 @@ export default function Portfolio() {
           <SectionHeader center color="white">
             Portfolio
           </SectionHeader>
+          <Center>
+            <Text>Projects below are sorted newest to oldest.</Text>
+          </Center>
         </Fade>
+
         <Fade up>
           <Paper>
             {projects.map((project, index) => (

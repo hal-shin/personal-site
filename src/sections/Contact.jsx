@@ -142,7 +142,7 @@ function Contact() {
     const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
     if (!email) {
-      setError("I would love an email address so I can get back to you!");
+      setError("Please provide an email address so I can get back to you!");
       return false;
     } else if (!emailRegex.test(email)) {
       setError("That's not a valid email address, unfortunately.");

@@ -1,5 +1,23 @@
 const projects = [
   {
+    name: "Friday",
+    github: "https://github.com/communitybicycle/friday",
+    image: "https://i.ibb.co/6sCKT24/friday.png",
+    description: `Friday is a desktop generalist tool, built to be modular. As an 
+      Electron app, it allows the user to create actions (open link, folder, run 
+      command, run script) and instructions made up of actions. It supports plugin
+      development and dashboards with draggable modules.`,
+  },
+  {
+    name: "PostBook",
+    url: "https://postbook.halshin.com",
+    github: "https://github.com/communitybicycle/postbook",
+    image: "https://i.ibb.co/3CMhXm4/Screenshot-2021-03-21-204206.png",
+    description: `PostBook was a take-home project I completed in a single workday. 
+    The app supports basic CRUD operations (no backend) through creating posts, and
+    has a basic search and filter functionality.`,
+  },
+  {
     name: "RL Tournament App",
     url: "https://rl-team-maker.herokuapp.com/",
     github: "https://github.com/communitybicycle/rl-team-maker",
@@ -15,8 +33,8 @@ const projects = [
     image: "https://i.ibb.co/CvBpY2n/project-incubator.jpg",
     description: `Project Incubator is a social platform that fosters
      meaning projects through collaboration. Users are able to create
-      projects that others can request to join. Within a project,
-       the members can share ideas through the forum, post project updates, 
+      projects that others can request to join. In a project,
+       members can share ideas through the forum, post project updates, 
        set goals and complete task items.`,
   },
   {

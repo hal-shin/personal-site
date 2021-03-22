@@ -43,6 +43,7 @@ const Container = styled.div`
       ),
       url(${(props) => props.image});
     background-size: cover;
+    background-position: center;
     z-index: -1;
     position: absolute;
     content: "";
@@ -108,6 +109,8 @@ const Buttons = styled.div`
   visibility: hidden;
   display: flex;
   justify-content: space-between;
+  position: relative;
+  height: 54px;
 `;
 
 const Button = styled.div`
@@ -125,8 +128,8 @@ const Button = styled.div`
   transition: all 0.25s ease-in;
   &:hover {
     transition: all 0.25s ease-in;
-    background-color: rgb(101, 201, 255);
-    border: 2px solid rgb(101, 201, 255);
+    background-color: rgba(101, 201, 255, 0.4);
+    border: 2px solid rgba(101, 201, 255, 0.8);
   }
 `;
 
@@ -147,8 +150,13 @@ function Project({ project }) {
         <Header>{name}</Header>
         <Description>{description}</Description>
         <Buttons>
-          <Button onClick={handleGoToProject}>Go to Project</Button>
-          <Button onClick={handleSourceCode}>Source Code</Button>
+          {url && <Button onClick={handleGoToProject}>Go to Project</Button>}
+          <Button
+            onClick={handleSourceCode}
+            style={{ position: "absolute", right: 0 }}
+          >
+            Source Code
+          </Button>
         </Buttons>
       </Container>
     </OuterContainer>

@@ -11,16 +11,11 @@ import {
   SectionHeader,
 } from "../components";
 import toolboxImage from "../assets/toolbox.png";
+import Text from "../components/Text";
 import mq from "../utils/breakpoints";
 
 const Container = styled(ContainerBase)`
   background-color: #383333;
-`;
-
-const Text = styled.p`
-  text-align: left;
-  color: white;
-  margin-bottom: 16px;
 `;
 
 const Bars = styled.div`
@@ -103,6 +98,10 @@ const skills = [
     confidence: "80%",
   },
   {
+    text: "TypeScript",
+    confidence: "80%",
+  },
+  {
     text: "HTML",
     confidence: "80%",
   },
@@ -144,14 +143,17 @@ export default function Skillset() {
             <Fade right>
               <SectionHeader color="white">Skillset</SectionHeader>
               <Text>
-                My main tech stack of choice is MERN, but I'm always on the
-                lookout for new technologies and skills to take my applications
-                further.
+                My weapon of choice is React, Redux, and TypeScript. While I can
+                find my way through backend code in either Node.js or Python, I
+                specializing in delivering superb UI/UX through responsive
+                design, a11y compliant code, and more.
               </Text>
               <Text>
-                On the side, I have other skills that make me a more rounded
-                developer, such as design, project management, git/GitHub, and
-                leadership.
+                On the other hand, other skills that I believe make me more
+                well-rounded include things like being easy to talk to, a decent
+                eye for design, project management (Agile, if you so wish), git,
+                and GitHub. developer, such as design, project management,
+                git/GitHub, and leadership.
               </Text>
             </Fade>
           </Column>
