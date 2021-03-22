@@ -102,7 +102,7 @@ const Subheader = styled.p`
   color: #222;
   ${mq({
     fontSize: ["1.55rem", "1.75rem", "1.75rem", "1.75rem", "2rem"],
-    marginBottom: [25, 10, 20, 30, 30],
+    marginBottom: [25, 20, 20, 30, 30],
   })};
   font-weight: normal;
   text-align: center;
@@ -114,7 +114,8 @@ const Icons = styled.div`
   align-items: center;
   ${mq({
     height: ["40px", "46px", "56px", "70px", "100px"],
-    marginBottom: ["0", "20px"],
+    marginBottom: ["0", "0", "20px"],
+    padding: ["0 10%", "0 10%", "0"],
   })};
   //border: 1px solid red;
 `;
