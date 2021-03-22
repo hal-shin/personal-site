@@ -8,14 +8,14 @@ import Contact from "./sections/Contact";
 
 function App() {
   return (
-    <div className="App">
+    <main className="App">
       <Jumbotron />
       <About />
       <Skillset />
       <Portfolio />
       <Contact />
       <Footer />
-    </div>
+    </main>
   );
 }
 

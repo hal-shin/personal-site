@@ -7,7 +7,7 @@ import mq from "../utils/breakpoints";
 import HSAvatar from "../assets/hs-avatar.svg";
 import { portfolioRef } from "./Portfolio";
 
-const Container = styled.div`
+const Container = styled.section`
   height: 100vh;
   display: flex;
   top: 0;
