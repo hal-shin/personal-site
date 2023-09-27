@@ -143,22 +143,57 @@ export default function Skillset() {
             <Fade right>
               <SectionHeader color="white">Skillset</SectionHeader>
               <Text>
-                My weapon of choice is React, Redux, and TypeScript. While I can
-                find my way through backend code in either Node.js or Python, I
-                specializing in delivering superb UI/UX through responsive
-                design, a11y compliant code, and more.
+                I am experienced in the full lifecycle of software development.
               </Text>
               <Text>
-                On the other hand, other skills that I believe make me more
-                well-rounded include things like being easy to talk to, a decent
-                eye for design, project management (Agile, if you so wish), git,
-                and GitHub. developer, such as design, project management,
-                git/GitHub, and leadership.
+                <strong>Frontend</strong>
+              </Text>
+              <Text>
+                <em>
+                  JavaScript/TypeScript | CSS3 | HTML5 | React/Next.js/React
+                  Native + state management + CSS frameworks | Design | SEOs |
+                  Accessibility (a11y) | Internationalization (i18n)
+                </em>
+              </Text>
+              <Text>
+                My weapon of choice is React with TypeScript. I enjoy converting
+                wireframes into implementation, but I can also create the design
+                files. I particularly appreciate frontend for the quick feedback
+                and the visual nature of the work.
+              </Text>
+              <Text>
+                <strong>Backend</strong>
+              </Text>
+              <Text>
+                <em>
+                  Python + Flask/FastAPI | Node.js + Express.js | MongoDB | REST
+                  | Apache Airflow | Electron.js
+                </em>
+              </Text>
+              <Text>
+                My experience with the backend stack involves items like API
+                development, testing, authentication, authorization, monitoring,
+                and scheduling.
+              </Text>
+              <Text>
+                <strong>DevOps</strong>
+              </Text>
+              <Text>
+                <em>
+                  CI/CD Pipelines | Git/GitHub + Actions | Scrum/Agile | Linux |
+                  Docker | Kubernetes | GCP | AWS
+                </em>
+              </Text>
+              <Text>
+                DevOps helps organizations move quickly and learn more
+                effectively. I'm familiar with containerization through Docker,
+                orchestration through Kubernetes, and provisioning through both
+                GCP and AWS.
               </Text>
             </Fade>
           </Column>
         </Columns>
-        <Fade up>
+        {/* <Fade up>
           <Bars>
             {skills.map((skill) => (
               <ProgressBar key={skill.text}>
@@ -173,7 +208,7 @@ export default function Skillset() {
               </ProgressBar>
             ))}
           </Bars>
-        </Fade>
+        </Fade> */}
       </Content>
     </Container>
   );

@@ -139,7 +139,8 @@ function Contact() {
 
   const validateForm = () => {
     const { email, name, message } = formData;
-    const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const emailRegex =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
     if (!email) {
       setError("Please provide an email address so I can get back to you!");
@@ -184,9 +185,9 @@ function Contact() {
   return (
     <Container>
       <Image src={walkietalkie} alt="" />
-      <Content center>
+      <Content id="contact" center>
         <Fade down>
-          <SectionHeader center>Contact Me</SectionHeader>
+          <SectionHeader center>Contact me</SectionHeader>
         </Fade>
         {isEmailSent ? (
           <p>Your message has been sent!</p>

@@ -5,7 +5,7 @@ import Twitter from "../assets/social-1_round-twitter.svg";
 
 export const GitHubIcon = () => (
   <a
-    href="https://github.com/communitybicycle"
+    href="https://github.com/hal-shin"
     target="_blank"
     rel="noopener noreferrer"
   >

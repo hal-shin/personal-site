@@ -3,17 +3,8 @@ import styled from "@emotion/styled";
 import mq from "../utils/breakpoints";
 
 const OuterContainer = styled.div`
-  ${mq({
-    width: [
-      "calc(100% - 16px)",
-      "calc(100% - 16px)",
-      "calc(50% - 16px)",
-      "calc(50% - 16px)",
-      "calc(33% - 16px)",
-    ],
-  })};
+  height: 100%;
   background: white;
-  padding: 8px;
   overflow: hidden;
 `;
 
@@ -30,8 +21,7 @@ const Container = styled.div`
   background-size: cover;
   background-position: center;
   padding: 16px;
-  min-height: 300px; //remove later
-  height: auto;
+  height: calc(100% - 32px);
   transition: all 0s ease-in;
   z-index: 5;
   position: relative;
@@ -89,7 +79,6 @@ const Header = styled.h3`
   font-weight: bold;
   text-align: center;
   color: white;
-  height: 100%;
   visibility: hidden;
   opacity: 0;
 `;
@@ -109,8 +98,10 @@ const Buttons = styled.div`
   visibility: hidden;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   position: relative;
   height: 54px;
+  margin-top: 8px;
 `;
 
 const Button = styled.div`
@@ -151,12 +142,14 @@ function Project({ project }) {
         <Description>{description}</Description>
         <Buttons>
           {url && <Button onClick={handleGoToProject}>Go to Project</Button>}
-          <Button
-            onClick={handleSourceCode}
-            style={{ position: "absolute", right: 0 }}
-          >
-            Source Code
-          </Button>
+          {github && (
+            <Button
+              onClick={handleSourceCode}
+              style={{ position: "absolute", right: 0 }}
+            >
+              Source Code
+            </Button>
+          )}
         </Buttons>
       </Container>
     </OuterContainer>

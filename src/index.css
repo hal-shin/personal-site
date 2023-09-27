@@ -63,6 +63,7 @@ p {
 .svg-icon:hover {
   background: rgba(230, 230, 230, 1);
   padding: 10px;
+  transform: translateY(-4px);
 }
 
 /* Animated Background css */

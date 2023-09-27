@@ -178,7 +178,7 @@ function Jumbotron() {
             </Avatar>
             <div>
               <Header>Hal Shin</Header>
-              <Subheader>full-stack developer</Subheader>
+              <Subheader>software engineer</Subheader>
               <Icons>
                 <Icon>
                   <GitHubIcon />

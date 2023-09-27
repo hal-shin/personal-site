@@ -4,9 +4,9 @@ import mq from "../utils/breakpoints";
 const Button = styled.button`
   display: inline-block;
   background: rgb(101, 201, 255);
-  border: 2px solid rgb(101, 201, 255);
+  border: none;
   color: white;
-  border-radius: 35px;
+  border-radius: 8px;
   cursor: pointer;
   ${mq({
     padding: ["6px 12px", "8px 12px", 14, 14, "16px 24px"],
@@ -14,12 +14,12 @@ const Button = styled.button`
   })};
   font-family: "Oxygen", sans-serif;
 
-  transition: all ease-in-out 0.25s;
+  transition: all 0.15s ease-in;
 
   &:hover {
-    outline: none;
-    background-color: white;
-    color: rgb(101, 201, 255);
+    // outline: 10px solid rgba(230, 230, 230, 1);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 0 -1px rgba(0, 0, 0, 0.42);
   }
 
   &:focus {
