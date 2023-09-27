@@ -49,7 +49,7 @@ const projects = [
     sessions through web sockets, and more.`,
   },
   {
-    name: "projectIncubator",
+    name: "Project Incubator",
     github: "https://github.com/projectIncubator/pi-frontend",
     image: "https://i.ibb.co/CvBpY2n/project-incubator.jpg",
     description: `Project Incubator is a social platform that fosters
@@ -84,15 +84,6 @@ const projects = [
     for productivity. It handles pause and reset features and it
     cycles through the set break and session lengths. There is also an alarm so you don't
     miss your breaks!`,
-  },
-  {
-    name: "JavaScript Calculator",
-    url: "https://hal-shin.github.io/javascript-calculator/",
-    github: "https://github.com/hal-shin/javascript-calculator",
-    image: "https://i.ibb.co/q9krY16/javascript-calculator.png",
-    description: `JavaScript Calculator is just that—a calculator that handles basic
-    functions such as addition, subtraction, division, and multiplication. It also
-    stores your latest output so you can simply continue your calculations.`,
   },
 ];
 
